@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="DS18B20 和 DS18S20 手册问答。按型号和条件查表，返回可核对的 PDF 页码。">
+  <title>器件手册问答 · 器件资料台</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script defer src="/assets/app.js"></script>
+</head>
+<body class="devices" data-demo="devices">
+  <header class="header">
+    <div class="shell nav">
+      <a class="brand" href="/devices"><span class="brand-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 3v3m6-3v3m-6 12v3m6-3v3M3 9h3m-3 6h3m12-6h3m-3 6h3"/><rect x="10" y="10" width="4" height="4" rx=".6"/></svg></span><span>器件资料台<span class="brand-sub">COMPONENT LAB</span></span></a>
+      <nav aria-label="演示导航" class="site-nav"><a href="/recipes">菜谱问答</a><a href="/devices" aria-current="page">器件手册</a></nav>
+      <div class="nav-account">
+        <span class="availability" data-availability><span></span>连接中</span>
+        <span class="viewer-name" data-viewer hidden></span>
+        <button class="button secondary sign-out" type="button" data-sign-out hidden>退出</button>
+      </div>
+    </div>
+  </header>
+  <main class="shell">
+    <section class="device-hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> DATA SHEET ASSISTANT <span class="hero-count">02 / LAB</span></p>
+        <h1 id="hero-title">器件<span>手册问答</span></h1>
+        <p class="lead">围绕具体型号查询参数与工作原理。每条证据都带手册名和 PDF 页码。</p>
+        <a class="button primary" href="#ask">查一个参数 <span aria-hidden="true">↗</span></a>
+        <div class="hero-facts"><span><b>02</b> 器件型号</span><span><b>05</b> 已核对表格行</span><span><b>11</b> 正文子块</span></div>
+      </div>
+      <div class="chip-art" aria-hidden="true">
+        <span class="chip-label">FIG. 01 <span>DEVICE INDEX</span></span>
+        <svg viewBox="0 0 450 276" fill="none">
+          <path d="M27 50h86l28 28h67M31 114h73l25 25h54M56 212h80l29-29h26M423 56h-77l-34 34h-45m152 48h-90l-21 21h-36m147 63h-91l-30-30h-35" stroke="#386b7b" stroke-width="1.2"/>
+          <path d="M144 95h31m-31 23h31m-31 23h31m-31 23h31m-31 23h31m102-92h31m-31 23h31m-31 23h31m-31 23h31m-31 23h31M192 63v20m22-20v20m22-20v20m22-20v20m-66 116v20m22-20v20m22-20v20m22-20v20" stroke="#78e1d3" stroke-width="2"/>
+          <rect x="175" y="83" width="102" height="116" rx="9" fill="#0c2330" stroke="#78e1d3" stroke-width="1.5"/><rect x="184" y="92" width="84" height="98" rx="4" stroke="#274e5b"/>
+          <circle cx="193" cy="101" r="2.5" fill="#78e1d3"/><path d="M201 159h50m-39 8h28" stroke="#386b7b"/>
+          <text x="226" y="139" text-anchor="middle" fill="#d9fff8" font-family="monospace" font-size="15" data-chip-model>DS18B20</text>
+          <text x="226" y="152" text-anchor="middle" fill="#85aeb9" font-family="monospace" font-size="8" letter-spacing="1">1-WIRE SENSOR</text>
+          <g fill="#78e1d3"><circle cx="27" cy="50" r="3"/><circle cx="31" cy="114" r="3"/><circle cx="56" cy="212" r="3"/><circle cx="423" cy="56" r="3"/><circle cx="419" cy="138" r="3"/><circle cx="419" cy="222" r="3"/></g>
+        </svg>
+        <span class="chip-note">1-WIRE® <span>DS18B20 / DS18S20</span></span>
+      </div>
+    </section>
+    <div class="lab-grid">
+      <aside class="lab-side" aria-label="型号和资料">
+        <p class="eyebrow">01 / MODEL INDEX</p><h2>选择型号</h2>
+        <div class="model-list" role="group" aria-label="选择器件型号">
+          <button type="button" data-model="DS18B20" aria-pressed="true"><span>DS18B20</span><small>Rev. 6</small></button>
+          <button type="button" data-model="DS18S20" aria-pressed="false"><span>DS18S20</span><small>Rev. 3</small></button>
+        </div>
+        <p class="eyebrow side-label">02 / DOCUMENTS</p><h2>手册原文</h2>
+        <div class="manual-list">
+          <a href="/manuals/DS18B20.pdf" target="_blank" rel="noopener"><span class="pdf-icon">PDF</span><span>DS18B20 数据手册</span><span aria-hidden="true">↗</span></a>
+          <a href="/manuals/DS18S20.pdf" target="_blank" rel="noopener"><span class="pdf-icon">PDF</span><span>DS18S20 数据手册</span><span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="side-note">参数问题按单一型号与摄氏温度筛选。正文证据可以直接跳到对应页。</p>
+      </aside>
+      <section id="ask" class="workspace device-workspace" aria-labelledby="ask-title">
+        <div class="workspace-head"><div><p class="eyebrow">QUERY WORKBENCH</p><h2 id="ask-title">查手册</h2></div><span class="method-tag">条件筛选 · 页码引用</span></div>
+        <form class="ask-form" id="ask-form">
+          <label class="sr-only" for="question">输入器件问题</label>
+          <textarea id="question" rows="3" maxlength="300" placeholder="例如：DS18B20 在 90°C 的温度误差是多少？" required></textarea>
+          <div class="form-tools"><div class="mode-control" role="group" aria-label="回答方式"><button type="button" data-mode="preview" aria-pressed="true">证据预览</button><button type="button" data-mode="answer" aria-pressed="false">生成回答</button></div><button class="button primary submit" type="submit">查询证据 <span aria-hidden="true">↑</span></button></div>
+        </form>
+        <div class="quick"><span>试试</span><button type="button" data-template="{model} 在 90°C 的温度误差是多少？">90°C 误差</button><button type="button" data-template="{model} 的唯一序列号保存在什么位置？">序列号位置</button><button type="button" data-template="{model} 在寄生供电模式下，数据线为高电平和低电平时分别怎样获得供电？">寄生供电</button><button type="button" data-template="{model} 在 130°C 的温度误差是多少？">资料覆盖边界</button></div>
+        <div id="result" class="result" aria-live="polite" hidden></div>
+      </section>
+    </div>
+  </main>
+  <footer class="shell footer"><span>器件资料来源 · Analog Devices 数据手册</span><a href="/recipes">查看菜谱问答演示 ↗</a></footer>
+</body>
+</html>

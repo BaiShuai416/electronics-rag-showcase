@@ -1,0 +1,17 @@
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+.venv/
+.idea/
+.vscode/
+.DS_Store
+models/
+learning/artifacts/
+learning/迁移资料/
+showcase/.data/
+showcase/.runtime/
+*.sqlite3
+*.sqlite3-*
+*.log

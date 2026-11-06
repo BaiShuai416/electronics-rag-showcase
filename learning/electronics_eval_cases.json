@@ -1,0 +1,121 @@
+{
+  "temperature": [
+    {
+      "name": "B20 常规查表",
+      "model": "DS18B20",
+      "temperature_c": 90,
+      "matching_rows": 2,
+      "expected": {
+        "source_name": "DS18B20.pdf",
+        "pdf_page": 2,
+        "temperature_min_c": -30,
+        "temperature_max_c": 100,
+        "max_abs_error": 1
+      }
+    },
+    {
+      "name": "S20 相似型号",
+      "model": "DS18S20",
+      "temperature_c": 90,
+      "matching_rows": 1,
+      "expected": {
+        "source_name": "DS18S20.pdf",
+        "pdf_page": 2,
+        "temperature_min_c": -55,
+        "temperature_max_c": 125,
+        "max_abs_error": 2
+      }
+    },
+    {
+      "name": "B20 上端点",
+      "model": "DS18B20",
+      "temperature_c": 85,
+      "matching_rows": 3,
+      "expected": {
+        "source_name": "DS18B20.pdf",
+        "pdf_page": 2,
+        "temperature_min_c": -10,
+        "temperature_max_c": 85,
+        "max_abs_error": 0.5
+      }
+    },
+    {
+      "name": "B20 刚越过窄温区",
+      "model": "DS18B20",
+      "temperature_c": 85.1,
+      "matching_rows": 2,
+      "expected": {
+        "source_name": "DS18B20.pdf",
+        "pdf_page": 2,
+        "temperature_min_c": -30,
+        "temperature_max_c": 100,
+        "max_abs_error": 1
+      }
+    },
+    {
+      "name": "S20 下端点",
+      "model": "DS18S20",
+      "temperature_c": -55,
+      "matching_rows": 1,
+      "expected": {
+        "source_name": "DS18S20.pdf",
+        "pdf_page": 2,
+        "temperature_min_c": -55,
+        "temperature_max_c": 125,
+        "max_abs_error": 2
+      }
+    },
+    {
+      "name": "B20 超出已核对温区",
+      "model": "DS18B20",
+      "temperature_c": 130,
+      "matching_rows": 0,
+      "expected": null
+    }
+  ],
+  "prose": [
+    {
+      "name": "B20 中文寄生供电",
+      "model": "DS18B20",
+      "question": "DS18B20 在寄生供电模式下，数据线为高电平和低电平时分别怎样获得供电？",
+      "source_name": "DS18B20.pdf",
+      "pdf_page": 5,
+      "evidence": [
+        "DQ pin when the bus is high",
+        "supplies power to the device when the bus is low"
+      ]
+    },
+    {
+      "name": "B20 英文寄生供电",
+      "model": "DS18B20",
+      "question": "How is the DS18B20 powered when the data line is high and when it is low in parasite power mode?",
+      "source_name": "DS18B20.pdf",
+      "pdf_page": 5,
+      "evidence": [
+        "DQ pin when the bus is high",
+        "supplies power to the device when the bus is low"
+      ]
+    },
+    {
+      "name": "S20 中文寄生供电",
+      "model": "DS18S20",
+      "question": "DS18S20 在寄生供电模式下，数据线为高电平和低电平时分别怎样获得供电？",
+      "source_name": "DS18S20.pdf",
+      "pdf_page": 5,
+      "evidence": [
+        "DQ pin when the bus is high",
+        "supplies power to the device when the bus is low"
+      ]
+    },
+    {
+      "name": "B20 序列号存储",
+      "model": "DS18B20",
+      "question": "DS18B20 的唯一序列号存在哪里？",
+      "source_name": "DS18B20.pdf",
+      "pdf_page": 5,
+      "evidence": [
+        "The 64-bit ROM stores the device’s unique serial code."
+      ]
+    }
+  ]
+}

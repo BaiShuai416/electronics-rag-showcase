@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="从本地菜谱库检索食材、用量和制作步骤的 RAG 演示。">
+  <title>今天吃什么 · 菜谱问答</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script defer src="/assets/app.js"></script>
+</head>
+<body class="recipes" data-demo="recipes">
+  <header class="header">
+    <div class="shell nav">
+      <a class="brand" href="/recipes"><span class="brand-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M5 3v6a3 3 0 0 0 6 0V3M8 3v18M19 21V3c-3 1-4 4-4 8h4"/></svg></span><span>食谱手边<span class="brand-sub">RECIPE STUDIO</span></span></a>
+      <nav aria-label="演示导航" class="site-nav"><a href="/recipes" aria-current="page">菜谱问答</a><a href="/devices">器件手册</a></nav>
+      <div class="nav-account">
+        <span class="availability" data-availability><span></span>连接中</span>
+        <span class="viewer-name" data-viewer hidden></span>
+        <button class="button secondary sign-out" type="button" data-sign-out hidden>退出</button>
+      </div>
+    </div>
+  </header>
+  <main class="shell">
+    <section class="recipe-hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> 本地菜谱知识库 <span class="hero-count">01 / FOOD</span></p>
+        <h1 id="hero-title">今天<span>吃什么？</span></h1>
+        <p class="lead">从手边的食谱找做法。问食材、问用量，沿着原文把一道菜做出来。</p>
+        <div class="hero-actions"><a class="button primary" href="#ask">开始提问 <span aria-hidden="true">↗</span></a><a class="plain-link" href="#recommendations">先看看推荐</a></div>
+      </div>
+      <figure class="hero-photo">
+        <img src="/photos/shrimp.jpg" alt="本地菜谱中的黄油煎虾成品">
+        <figcaption><span>本期菜谱</span><strong>黄油煎虾</strong></figcaption>
+        <span class="photo-index" aria-hidden="true">01</span>
+      </figure>
+    </section>
+    <section id="recommendations" class="recommendations" aria-labelledby="menu-title">
+      <div class="section-heading"><div><p class="eyebrow">FROM THE COLLECTION</p><h2 id="menu-title">今天的三道菜</h2></div><button type="button" class="button secondary" id="shuffle" aria-label="换一批推荐">换一批 <span aria-hidden="true">↻</span></button></div>
+      <div id="recipe-cards" class="recipe-grid" aria-live="polite"><p class="muted">正在读取菜谱卡片…</p></div>
+    </section>
+    <section id="ask" class="workspace recipe-workspace" aria-labelledby="ask-title">
+      <div class="workspace-head"><div><p class="eyebrow">ASK THE RECIPES</p><h2 id="ask-title">这道菜怎么做？</h2></div><span class="method-tag">BM25 + 向量 + RRF</span></div>
+      <form class="ask-form" id="ask-form">
+        <label class="sr-only" for="question">输入菜谱问题</label>
+        <textarea id="question" rows="2" maxlength="300" placeholder="例如：西红柿炒鸡蛋里一定要加入西葫芦吗？" required></textarea>
+        <div class="form-tools"><div class="mode-control" role="group" aria-label="回答方式"><button type="button" data-mode="preview" aria-pressed="true">证据预览</button><button type="button" data-mode="answer" aria-pressed="false">生成回答</button></div><button class="button primary submit" type="submit">检索菜谱 <span aria-hidden="true">↑</span></button></div>
+      </form>
+      <div class="quick"><span>试试</span><button type="button" data-question="西红柿炒鸡蛋里一定要加入西葫芦吗？">西红柿炒鸡蛋要加西葫芦吗？</button><button type="button" data-question="鸡蛋羹需要哪些食材？">鸡蛋羹需要哪些食材？</button><button type="button" data-question="黄油煎虾怎么做？">黄油煎虾怎么做？</button></div>
+      <div id="result" class="result" aria-live="polite" hidden></div>
+    </section>
+  </main>
+  <footer class="shell footer"><span>菜谱和图片来源 · <a href="https://github.com/Anduin2017/HowToCook" target="_blank" rel="noopener">HowToCook</a></span><a href="/devices">查看器件手册演示 ↗</a></footer>
+</body>
+</html>

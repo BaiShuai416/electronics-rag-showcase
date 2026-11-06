@@ -1,0 +1,33 @@
+[
+  {
+    "document_id": "ds18b20",
+    "pdf_page": 2,
+    "table": "DC Electrical Characteristics",
+    "parameter": "Thermometer Error",
+    "symbol": "tERR",
+    "column": "MAX",
+    "unit": "°C",
+    "table_conditions": "VDD = 3.0 V to 5.5 V. Temperature range -55 °C to +125 °C.",
+    "note": "Note 3. See Figure 1. The error limits are 3-sigma values.",
+    "rows": [
+      {"temperature_min_c": -10, "temperature_max_c": 85, "max_abs_error": 0.5},
+      {"temperature_min_c": -30, "temperature_max_c": 100, "max_abs_error": 1},
+      {"temperature_min_c": -55, "temperature_max_c": 125, "max_abs_error": 2}
+    ]
+  },
+  {
+    "document_id": "ds18s20",
+    "pdf_page": 2,
+    "table": "DC Electrical Characteristics",
+    "parameter": "Thermometer Error",
+    "symbol": "tERR",
+    "column": "MAX",
+    "unit": "°C",
+    "table_conditions": "VDD = 3.0 V to 5.5 V. TA = -55 °C to +125 °C unless otherwise noted.",
+    "note": "Note 3. See Figure 1 for the typical performance curve.",
+    "rows": [
+      {"temperature_min_c": -10, "temperature_max_c": 85, "max_abs_error": 0.5},
+      {"temperature_min_c": -55, "temperature_max_c": 125, "max_abs_error": 2}
+    ]
+  }
+]

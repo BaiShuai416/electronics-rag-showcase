@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>管理后台 · 问答演示</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script defer src="/assets/admin.js"></script>
+</head>
+<body class="devices">
+  <header class="header">
+    <div class="shell nav">
+      <a class="brand" href="/admin">演示管理后台</a>
+      <button class="button secondary" type="button" id="admin-logout">退出</button>
+    </div>
+  </header>
+  <main class="shell admin-main">
+    <div class="admin-intro">
+      <div>
+        <p class="eyebrow"><span class="eyebrow-line"></span> 本机管理</p>
+        <h1>访客与提问</h1>
+        <p class="muted">查看菜谱问答和器件手册的注册账号与使用记录。</p>
+      </div>
+      <button class="button secondary" type="button" id="refresh-records">刷新记录</button>
+    </div>
+    <p id="admin-error" class="error" role="alert" hidden></p>
+    <div class="admin-stats">
+      <div><span>账号总数</span><strong id="user-count">—</strong></div>
+      <div><span>提问总数</span><strong id="question-count">—</strong></div>
+    </div>
+    <section class="workspace admin-panel" aria-labelledby="users-title">
+      <h2 id="users-title">注册账号</h2>
+      <div class="table-scroll" tabindex="0" aria-label="注册账号表">
+        <table>
+          <thead><tr><th scope="col">账号</th><th scope="col">名称</th><th scope="col">角色</th><th scope="col">注册时间</th></tr></thead>
+          <tbody id="users-body"><tr><td colspan="4">正在读取账号…</td></tr></tbody>
+        </table>
+      </div>
+      <div class="pagination" data-page-group="users">
+        <button class="button secondary" type="button" data-step="-1" disabled>上一页</button>
+        <span data-page-label>第 1 页</span>
+        <button class="button secondary" type="button" data-step="1" disabled>下一页</button>
+      </div>
+    </section>
+    <section class="workspace admin-panel" aria-labelledby="questions-title">
+      <h2 id="questions-title">提问记录</h2>
+      <div class="table-scroll" tabindex="0" aria-label="提问记录表">
+        <table>
+          <thead><tr><th scope="col">提问者</th><th scope="col">项目</th><th scope="col">问题</th><th scope="col">处理情况</th><th scope="col">提问时间</th></tr></thead>
+          <tbody id="questions-body"><tr><td colspan="5">正在读取提问…</td></tr></tbody>
+        </table>
+      </div>
+      <div class="pagination" data-page-group="questions">
+        <button class="button secondary" type="button" data-step="-1" disabled>上一页</button>
+        <span data-page-label>第 1 页</span>
+        <button class="button secondary" type="button" data-step="1" disabled>下一页</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

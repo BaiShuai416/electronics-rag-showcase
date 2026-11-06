@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>访客账号 · 问答演示</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script defer src="/assets/auth.js"></script>
+</head>
+<body class="account-page">
+  <main class="account-card">
+    <p class="eyebrow"><span class="eyebrow-line"></span> 问答演示</p>
+    <h1 id="auth-title">创建访客账号</h1>
+    <p class="muted" id="auth-intro">一个账号可以体验菜谱问答和器件手册。</p>
+    <nav class="site-nav auth-tabs" aria-label="账号操作">
+      <a href="/register" id="register-tab" aria-current="page">注册</a>
+      <a href="/login" id="login-tab">登录</a>
+    </nav>
+    <form class="auth-form" id="auth-form" action="/api/auth/register" method="post" hidden>
+      <label>账号
+        <input name="username" autocomplete="username" required minlength="3" maxlength="24" pattern="[A-Za-z0-9_]{3,24}" placeholder="英文字母、数字或下划线">
+      </label>
+      <label id="name-field">名称
+        <input name="display_name" autocomplete="nickname" required maxlength="30" placeholder="你希望显示的名字">
+      </label>
+      <label>密码
+        <input name="password" type="password" autocomplete="new-password" required minlength="8" maxlength="128" placeholder="至少 8 个字符">
+      </label>
+      <p id="privacy-note" class="privacy-note">管理员可查看你的账号、名称和提交的问题。请勿在提问中填写个人敏感信息。</p>
+      <p id="auth-error" class="error" role="alert" hidden></p>
+      <button type="submit" class="button primary" id="auth-submit">注册并进入 ↗</button>
+    </form>
+    <noscript><p>请启用浏览器的 JavaScript 后继续。</p></noscript>
+  </main>
+</body>
+</html>
